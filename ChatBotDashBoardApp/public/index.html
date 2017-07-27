@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Asistente Empleo</title>
+  <style>
+   .chat {
+      float:left;
+      width:25%;
+      height:100%;
+    }
+    .dashboard {
+      float:left;
+      width:75%;
+      height:100%;
+    }
+  </style>
+  <script language=JavaScript>
+
+function resetDash(req) {	
+    var xhttp = new XMLHttpRequest(),
+    method = "GET", url=req;   
+    xhttp.open( method, url, true ); // false for synchronous request    
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) { 
+          document.getElementById("result").innerHTML = xhttp.responseText; 
+      }
+    };
+    
+    xhttp.send( null );
+}
+</script>
+</head>
+<body>
+<script>
+  resetDash('http://pi-dashboard-alms.mybluemix.net/welcomeText?txt=Bienvenido');
+  resetDash('http://pi-dashboard-alms.mybluemix.net/resetNuevaOferta');
+
+</script>
+  <iframe frameborder=0 class="chat" src="chat.html"></iframe>
+  <iframe frameborder=0 class="dashboard" src="https://pi-dashboard-alms.mybluemix.net/ui/#/1"></iframe>
+  <p hidden id="result">0</p>
+</body>
+</html>

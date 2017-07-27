@@ -1,0 +1,20 @@
+{
+  "ServiceId": "com.ibm.cloudoe.orion.client.deploy",
+  "Params": {
+    "Target": {
+      "Url": "https://api.ng.bluemix.net",
+      "Org": "ALEJANDRO.DELGADO@ES.IBM.COM",
+      "Space": "dev"
+    },
+    "Name": "orange",
+    "Instrumentation": {
+      "host": "orange",
+      "domain": "mybluemix.net",
+      "services": [
+        "Convtest2"
+      ]
+    }
+  },
+  "Path": "manifest.yml",
+  "Type": "Cloud Foundry"
+}
